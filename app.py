@@ -1,5 +1,3 @@
-## possibly make Grad-CAM
-
 from flask import Flask, render_template, request
 import tensorflow as tf
 import numpy as np
@@ -54,4 +52,4 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)
