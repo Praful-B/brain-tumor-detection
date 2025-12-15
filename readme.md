@@ -93,5 +93,6 @@ This will generate training graphs and save a new `deMLon_model.h5`.
 
 ---
 
-Made with ❤️ by Praful-B for Tejas Expo
+made for Tejas Expo
+
 ````
