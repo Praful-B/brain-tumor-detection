@@ -1,4 +1,3 @@
-````markdown
 # 🧠 Brain Tumor Detection System
 
 A Deep Learning application capable of detecting brain tumors from MRI scans. This project utilizes a Convolutional Neural Network (CNN) for classification and provides a user-friendly web interface powered by Flask.
@@ -94,5 +93,3 @@ This will generate training graphs and save a new `deMLon_model.h5`.
 ---
 
 made for Tejas Expo
-
-````
