@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Brain Tumor Detection</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🧠 Brain Tumor Detection</h1>
+
+      <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required />
+        <button type="submit">Analyze MRI</button>
+      </form>
+
+      {% if result %}
+      <div class="result">
+        <h2>{{ result }}</h2>
+        <p>Confidence: {{ confidence | round(2) }}%</p>
+        <img src="{{ image_path }}" alt="Uploaded MRI" />
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
