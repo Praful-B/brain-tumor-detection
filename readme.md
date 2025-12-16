@@ -36,7 +36,7 @@ _Optimizer:_ Adam | _Loss Function:_ Binary Crossentropy
 ### 1\. Clone the Repository
 
 ```bash
-git clone [https://github.com/yourusername/brain-tumor-detection.git](https://github.com/yourusername/brain-tumor-detection.git)
+git clone https://github.com/Praful-B/brain-tumor-detection.git
 cd brain-tumor-detection
 ```
 
