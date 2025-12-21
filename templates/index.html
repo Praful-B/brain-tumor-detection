@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brain Tumor Detection</title>
     <link
       rel="stylesheet"
@@ -12,45 +11,17 @@
   <body>
     <div class="container">
       <h1>🧠 Brain Tumor Detection</h1>
-      <p class="subtitle">Upload an MRI scan for AI-powered analysis</p>
 
       <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="image" accept="image/*" required />
+        <input type="file" name="image" required />
         <button type="submit">Analyze MRI</button>
       </form>
 
       {% if result %}
       <div class="result">
-        <h2
-          class="result-title {% if 'Tumor Detected' in result %}tumor-detected{% else %}no-tumor{% endif %}"
-        >
-          {{ result }}
-        </h2>
-        <p class="confidence">Confidence: {{ confidence | round(2) }}%</p>
-
-        <div class="images-container">
-          <div class="image-box">
-            <h3>Original MRI Scan</h3>
-            <img
-              src="{{ url_for('static', filename=image_path) }}"
-              alt="Uploaded MRI"
-            />
-          </div>
-
-          {% if gradcam_path %}
-          <div class="image-box">
-            <h3>Grad-CAM Heatmap</h3>
-            <img
-              src="{{ url_for('static', filename=gradcam_path) }}"
-              alt="Grad-CAM Heatmap"
-            />
-            <p class="heatmap-info">
-              Red/yellow areas indicate regions of interest detected by the AI
-              model
-            </p>
-          </div>
-          {% endif %}
-        </div>
+        <h2>{{ result }}</h2>
+        <p>Confidence: {{ confidence | round(2) }}%</p>
+        <img src="{{ image_path }}" alt="Uploaded MRI" />
       </div>
       {% endif %}
     </div>
